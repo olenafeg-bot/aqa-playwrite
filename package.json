@@ -1,0 +1,22 @@
+{
+  "name": "aqa-playwrite",
+  "version": "1.0.0",
+  "main": "readme.js",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/olenafeg-bot/aqa-playwrite.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/olenafeg-bot/aqa-playwrite/issues"
+  },
+  "homepage": "https://github.com/olenafeg-bot/aqa-playwrite#readme",
+  "description": "",
+  "devDependencies": {
+    "@playwright/test": "^1.58.2",
+    "@types/node": "^25.5.0"
+  }
+}
