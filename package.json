@@ -2,7 +2,10 @@
   "name": "aqa-playwrite",
   "version": "1.0.0",
   "main": "readme.js",
-  "scripts": {},
+  "scripts": {
+    "test:qauto": "set ENV_FILE=.env.qauto; npx playwright test ",
+    "test:qauto2": "set ENV_FILE=.env.qauto2; npx playwright test"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/olenafeg-bot/aqa-playwrite.git"
