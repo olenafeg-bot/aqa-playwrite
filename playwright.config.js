@@ -32,21 +32,41 @@ export default defineConfig({
   reporter: 'html',
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
-    /* Base URL to use in actions like `await page.goto('')`. */
-    baseURL: process.env.BASE_URL ?? 'https://qauto.forstudy.space/',
-    httpCredentials: {
-      username: process.env.HTTP_USERNAME ?? 'guest',
-      password: process.env.HTTP_PASSWORD ?? 'welcome2auto',
+    // /* Base URL to use in actions like `await page.goto('')`. */
+    // baseURL: process.env.BASE_URL ?? 'https://qauto.forstudy.space/',
+    // httpCredentials: {
+    //   username: process.env.HTTP_USERNAME ?? 'guest',
+    //   password: process.env.HTTP_PASSWORD ?? 'welcome2auto',
+    
+  
+      baseURL: 'https://qauto.forstudy.space/',
+      storageState: 'storageState.json',
+      httpCredentials: {
+        username: 'guest',
+        password: 'welcome2qauto',
     },
-    /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
     trace: 'on-first-retry',
   },
 
+   
+    /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
+    
+  
+
   /* Configure projects for major browsers */
   projects: [
+    {name: 'setup', 
+      testMatch: 'LoginSetup.setup.js',
+      use: { storageState: 'storageState.json' },
+    },
     {
       name: 'chromium',
-      use: { ...devices['Desktop Chrome'] },
+      testMatch: 'LoginSetup.setup.js',
+      use: { ...devices['Desktop Chrome'], 
+        storageState: 'storageState.json',
+        
+      },
+      dependencies: ['setup'],
     },
 
     {
